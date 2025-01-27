@@ -1,0 +1,20 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(express.static('public'));
+
+app.post('/generate-bilty', (req, res) => {
+    const biltyData = req.body;
+    // Logic to generate bilty document based on biltyData
+    // For now, just send a success response
+    res.send('Bilty generated successfully!');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
