@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilty Generator</title>
+</head>
+<body>
+    <h1>Bilty Generator</h1>
+    <form id="biltyForm">
+        <h2>Transport Operator Details</h2>
+        <label for="operatorName">Operator Name:</label>
+        <input type="text" id="operatorName" name="operatorName" value="ABHI ROAD CARRIER"><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" value="0253 - 2597133"><br>
+        <label for="cell">Cell:</label>
+        <input type="text" id="cell" name="cell" value="09373535944"><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="Nivrutti Complex, A-Wing, Shop No. 37/41, Mumbai Agra Road, Dwarka, Nashik. ( M.S. )"><br>
+        
+        <h2>Demurrage Charges</h2>
+        <label for="days">Days:</label>
+        <input type="number" id="days" name="days"><br>
+        <label for="rate">Rate:</label>
+        <input type="number" id="rate" name="rate"><br>
+        
+        <h2>Consignee Copy Details</h2>
+        <label for="issuingOfficer">Issuing Officer/Agent:</label>
+        <input type="text" id="issuingOfficer" name="issuingOfficer"><br>
+        <label for="deliveryOffice">Delivery Office:</label>
+        <input type="text" id="deliveryOffice" name="deliveryOffice"><br>
+        <label for="lorryNo">Lorry No.:</label>
+        <input type="text" id="lorryNo" name="lorryNo"><br>
+        
+        <h2>Insurance</h2>
+        <label for="insurance">Insurance:</label>
+        <select id="insurance" name="insurance">
+            <option value="notInsured">Not Insured</option>
+            <option value="insured">Insured</option>
+        </select><br>
+        <label for="gstin">GSTIN No.:</label>
+        <input type="text" id="gstin" name="gstin" value="27AISPP9734A1ZU"><br>
+        <label for="pan">PAN No.:</label>
+        <input type="text" id="pan" name="pan" value="AISPP9734A"><br>
+        
+        <h2>Mode of Packing</h2>
+        <label for="packingCompany">Company:</label>
+        <input type="text" id="packingCompany" name="packingCompany"><br>
+        <label for="packingState">State:</label>
+        <input type="text" id="packingState" name="packingState"><br>
+        <label for="packingTel">Tel. No.:</label>
+        <input type="text" id="packingTel" name="packingTel"><br>
+        
+        <h2>Invoice Details</h2>
+        <label for="invoiceNo">Invoice No.:</label>
+        <input type="text" id="invoiceNo" name="invoiceNo"><br>
+        <label for="policyNo">Policy No.:</label>
+        <input type="text" id="policyNo" name="policyNo"><br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount"><br>
+        
+        <h2>Consignment Note</h2>
+        <label for="consignorGst">Consignor's GST No.:</label>
+        <input type="text" id="consignorGst" name="consignorGst"><br>
+        <label for="noteNo">Note No.:</label>
+        <input type="text" id="noteNo" name="noteNo" value="901"><br>
+        <label for="noteDate">Date:</label>
+        <input type="date" id="noteDate" name="noteDate"><br>
+        <label for="noteState">State:</label>
+        <input type="text" id="noteState" name="noteState"><br>
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from"><br>
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to"><br>
+        <label for="consigneeBank">Consignee Bank's Name & Address:</label>
+        <input type="text" id="consigneeBank" name="consigneeBank"><br>
+        <label for="consigneeGst">Consignee's GST No.:</label>
+        <input type="text" id="consigneeGst" name="consigneeGst"><br>
+        <label for="consigneeState">State:</label>
+        <input type="text" id="consigneeState" name="consigneeState"><br>
+        <label for="excisePass">Central Excise Gate Pass:</label>
+        <input type="text" id="excisePass" name="excisePass"><br>
+        
+        <h2>Package Details</h2>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description"><br>
+        <label for="weightActual">Weight (Actual):</label>
+        <input type="number" id="weightActual" name="weightActual"><br>
+        <label for="weightCharged">Weight (Charged):</label>
+        <input type="number" id="weightCharged" name="weightCharged"><br>
+        <label for="rate">Rate:</label>
+        <input type="number" id="rate" name="rate"><br>
+        <label for="amountPay">Amount to Pay/Paid:</label>
+        <input type="number" id="amountPay" name="amountPay"><br>
+        <label for="freight">Freight:</label>
+        <input type="number" id="freight" name="freight"><br>
+        <label for="hamali">Hamali:</label>
+        <input type="number" id="hamali" name="hamali"><br>
+        <label for="riskCharges">Risk Charges:</label>
+        <input type="number" id="riskCharges" name="riskCharges"><br>
+        <label for="checkPostCharges">Check Post Charges:</label>
+        <input type="number" id="checkPostCharges" name="checkPostCharges"><br>
+        <label for="stCharges">St. Charges:</label>
+        <input type="number" id="stCharges" name="stCharges"><br>
+        <label for="gstTax">GST Tax will be paid by:</label>
+        <select id="gstTax" name="gstTax">
+            <option value="consignor">Consignor</option>
+            <option value="consignee">Consignee</option>
+            <option value="transporter">Transporter</option>
+        </select><br>
+        
+        <h2>Value</h2>
+        <label for="value">Value:</label>
+        <input type="number" id="value" name="value"><br>
+        <label for="operatorSignature">Signature of the Transport Operator:</label>
+        <input type="text" id="operatorSignature" name="operatorSignature"><br>
+        
+        <button type="submit">Generate Bilty</button>
+    </form>
+    <script>
+        document.getElementById('biltyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Logic to generate bilty document goes here
+            alert('Bilty Generated Successfully!');
+        });
+    </script>
+</body>
+</html>
