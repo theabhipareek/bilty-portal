@@ -133,6 +133,8 @@
                 document.body.appendChild(a);
                 a.click();
                 a.remove();
+            }).catch(error => {
+                console.error('Error generating PDF:', error);
             });
         });
     </script>
