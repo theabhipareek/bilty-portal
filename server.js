@@ -10,6 +10,11 @@ app.use(bodyParser.json());
 // Serve static files from the current directory
 app.use(express.static(path.join(__dirname, '.')));
 
+// Serve index.html at the root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.post('/generate-bilty', (req, res) => {
     const biltyData = req.body;
     // Logic to generate bilty document based on biltyData
