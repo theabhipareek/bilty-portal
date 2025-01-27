@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const PDFDocument = require('pdfkit');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000; // Use the environment port or default to 3000
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -15,13 +15,13 @@ app.get('/', (req, res) => {
 
 app.post('/generate-bilty', (req, res) => {
     const biltyData = req.body;
-    
+
     // Create a PDF document
     const doc = new PDFDocument();
     let buffers = [];
     doc.on('data', buffers.push.bind(buffers));
     doc.on('end', () => {
-        let pdfData = Buffer.concat(buffers);
+        const pdfData = Buffer.concat(buffers);
         res.writeHead(200, {
             'Content-Length': Buffer.byteLength(pdfData),
             'Content-Type': 'application/pdf',
