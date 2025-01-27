@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const PDFDocument = require('pdfkit');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Use the environment port or default to 3000
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -39,5 +39,5 @@ app.post('/generate-bilty', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
