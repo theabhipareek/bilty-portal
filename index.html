@@ -3,139 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilty Generator</title>
+    <title>Lorry Receipt Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bilty Generator</h1>
-    <form id="biltyForm" action="/generate-bilty" method="post">
-        <h2>Transport Operator Details</h2>
-        <label for="operatorName">Operator Name:</label>
-        <input type="text" id="operatorName" name="operatorName" value="ABHI ROAD CARRIER"><br>
-        <label for="phone">Phone:</label>
-        <input type="text" id="phone" name="phone" value="0253 - 2597133"><br>
-        <label for="cell">Cell:</label>
-        <input type="text" id="cell" name="cell" value="09373535944"><br>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" value="Nivrutti Complex, A-Wing, Shop No. 37/41, Mumbai Agra Road, Dwarka, Nashik. ( M.S. )"><br>
-        
-        <h2>Demurrage Charges</h2>
-        <label for="days">Days:</label>
-        <input type="number" id="days" name="days"><br>
-        <label for="rate">Rate:</label>
-        <input type="number" id="rate" name="rate"><br>
-        
-        <h2>Consignee Copy Details</h2>
-        <label for="issuingOfficer">Issuing Officer/Agent:</label>
-        <input type="text" id="issuingOfficer" name="issuingOfficer"><br>
-        <label for="deliveryOffice">Delivery Office:</label>
-        <input type="text" id="deliveryOffice" name="deliveryOffice"><br>
-        <label for="lorryNo">Lorry No.:</label>
-        <input type="text" id="lorryNo" name="lorryNo"><br>
-        
-        <h2>Insurance</h2>
-        <label for="insurance">Insurance:</label>
-        <select id="insurance" name="insurance">
-            <option value="notInsured">Not Insured</option>
-            <option value="insured">Insured</option>
-        </select><br>
-        <label for="gstin">GSTIN No.:</label>
-        <input type="text" id="gstin" name="gstin" value="27AISPP9734A1ZU"><br>
-        <label for="pan">PAN No.:</label>
-        <input type="text" id="pan" name="pan" value="AISPP9734A"><br>
-        
-        <h2>Mode of Packing</h2>
-        <label for="packingCompany">Company:</label>
-        <input type="text" id="packingCompany" name="packingCompany"><br>
-        <label for="packingState">State:</label>
-        <input type="text" id="packingState" name="packingState"><br>
-        <label for="packingTel">Tel. No.:</label>
-        <input type="text" id="packingTel" name="packingTel"><br>
-        
-        <h2>Invoice Details</h2>
-        <label for="invoiceNo">Invoice No.:</label>
-        <input type="text" id="invoiceNo" name="invoiceNo"><br>
-        <label for="policyNo">Policy No.:</label>
-        <input type="text" id="policyNo" name="policyNo"><br>
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount"><br>
-        
-        <h2>Consignment Note</h2>
-        <label for="consignorGst">Consignor's GST No.:</label>
-        <input type="text" id="consignorGst" name="consignorGst"><br>
-        <label for="noteNo">Note No.:</label>
-        <input type="text" id="noteNo" name="noteNo" value="901"><br>
-        <label for="noteDate">Date:</label>
-        <input type="date" id="noteDate" name="noteDate"><br>
-        <label for="noteState">State:</label>
-        <input type="text" id="noteState" name="noteState"><br>
-        <label for="from">From:</label>
-        <input type="text" id="from" name="from"><br>
-        <label for="to">To:</label>
-        <input type="text" id="to" name="to"><br>
-        <label for="consigneeBank">Consignee Bank's Name & Address:</label>
-        <input type="text" id="consigneeBank" name="consigneeBank"><br>
-        <label for="consigneeGst">Consignee's GST No.:</label>
-        <input type="text" id="consigneeGst" name="consigneeGst"><br>
-        <label for="consigneeState">State:</label>
-        <input type="text" id="consigneeState" name="consigneeState"><br>
-        <label for="excisePass">Central Excise Gate Pass:</label>
-        <input type="text" id="excisePass" name="excisePass"><br>
-        
-        <h2>Package Details</h2>
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description"><br>
-        <label for="weightActual">Weight (Actual):</label>
-        <input type="number" id="weightActual" name="weightActual"><br>
-        <label for="weightCharged">Weight (Charged):</label>
-        <input type="number" id="weightCharged" name="weightCharged"><br>
-        <label for="rate">Rate:</label>
-        <input type="number" id="rate" name="rate"><br>
-        <label for="amountPay">Amount to Pay/Paid:</label>
-        <input type="number" id="amountPay" name="amountPay"><br>
-        <label for="freight">Freight:</label>
-        <input type="number" id="freight" name="freight"><br>
-        <label for="hamali">Hamali:</label>
-        <input type="number" id="hamali" name="hamali"><br>
-        <label for="riskCharges">Risk Charges:</label>
-        <input type="number" id="riskCharges" name="riskCharges"><br>
-        <label for="checkPostCharges">Check Post Charges:</label>
-        <input type="number" id="checkPostCharges" name="checkPostCharges"><br>
-        <label for="stCharges">St. Charges:</label>
-        <input type="number" id="stCharges" name="stCharges"><br>
-        <label for="gstTax">GST Tax will be paid by:</label>
-        <select id="gstTax" name="gstTax">
-            <option value="consignor">Consignor</option>
-            <option value="consignee">Consignee</option>
-            <option value="transporter">Transporter</option>
-        </select><br>
-        
-        <h2>Value</h2>
-        <label for="value">Value:</label>
-        <input type="number" id="value" name="value"><br>
-        <label for="operatorSignature">Signature of the Transport Operator:</label>
-        <input type="text" id="operatorSignature" name="operatorSignature"><br>
-        
-        <button type="submit">Generate Bilty</button>
-    </form>
+    <div class="container mt-5">
+        <h1 class="text-center">Lorry Receipt Generator</h1>
+        <form id="lorry-receipt-form">
+            <div class="form-group">
+                <label for="consignor-name">Consignor's Name & Address:</label>
+                <textarea class="form-control" id="consignor-name" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="consignor-gst">Consignor's G.S.T. No:</label>
+                <input type="text" class="form-control" id="consignor-gst" required>
+            </div>
+            <div class="form-group">
+                <label for="consignee-name">Consignee Bank's Name & Address:</label>
+                <textarea class="form-control" id="consignee-name" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="consignee-gst">Consignee's G. S. T. No:</label>
+                <input type="text" class="form-control" id="consignee-gst" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description (Said to Contain):</label>
+                <textarea class="form-control" id="description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="number" class="form-control" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="rate">Rate:</label>
+                <input type="number" class="form-control" id="rate" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Pay/Paid:</label>
+                <input type="number" class="form-control" id="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="invoice-no">Invoice No:</label>
+                <input type="text" class="form-control" id="invoice-no" required>
+            </div>
+            <div class="form-group">
+                <label for="mode-of-packing">Mode of Packing:</label>
+                <input type="text" class="form-control" id="mode-of-packing" required>
+            </div>
+            <div class="form-group">
+                <label for="insurance">Has the Consignment been insured?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="insurance" id="insured" value="insured">
+                    <label class="form-check-label" for="insured">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="insurance" id="not-insured" value="not-insured" checked>
+                    <label class="form-check-label" for="not-insured">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gst-tax">GST Tax will be paid by:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gst-tax" id="consignor" value="consignor">
+                    <label class="form-check-label" for="consignor">Consignor</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gst-tax" id="consignee" value="consignee">
+                    <label class="form-check-label" for="consignee">Consignee</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gst-tax" id="transporter" value="transporter">
+                    <label class="form-check-label" for="transporter">Transporter</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Lorry Receipt</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
-        document.getElementById('biltyForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            fetch('/generate-bilty', {
-                method: 'POST',
-                body: formData
-            }).then(response => response.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'bilty.pdf';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            }).catch(error => {
-                console.error('Error generating PDF:', error);
-            });
+        const form = document.getElementById('lorry-receipt-form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const consignorName = document.getElementById('consignor-name').value;
+            const consignorGst = document.getElementById('consignor-gst').value;
+            const consigneeName = document.getElementById('consignee-name').value;
+            const consigneeGst = document.getElementById('consignee-gst').value;
+            const description = document.getElementById('description').value;
+            const weight = document.getElementById('weight').value;
+            const rate = document.getElementById('rate').value;
+            const amount = document.getElementById('amount').value;
+            const invoiceNo = document.getElementById('invoice-no').value;
+            const modeOfPacking = document.getElementById('mode-of-packing').value;
+            const insurance = document.querySelector('input[name="insurance"]:checked').value;
+            const gstTax = document.querySelector('input[name="gst-tax"]:checked').value;
+
+            const doc = new jsPDF();
+            doc.text("Lorry Receipt", 10, 10);
+            doc.text(`Consignor's Name & Address: ${consignorName}`, 10, 20);
+            doc.text(`Consignor's G.S.T. No: ${consignorGst}`, 10, 30);
+            doc.text(`Consignee Bank's Name & Address: ${consigneeName}`, 10, 40);
+            doc.text(`Consignee's G. S. T. No: ${consigneeGst}`, 10, 50);
+            doc.text(`Description (Said to Contain): ${description}`, 10, 60);
+            doc.text(`Weight: ${weight}`, 10, 70);
+            doc.text(`Rate: ${rate}`, 10, 80);
+            doc.text(`Amount to Pay/Paid: ${amount}`, 10, 90);
+            doc.text(`Invoice No: ${invoiceNo}`, 10, 100);
+            doc.text(`Mode of Packing: ${modeOfPacking}`, 10, 110);
+            doc.text(`Has the Consignment been insured? ${insurance}`, 10, 120);
+            doc.text(`GST Tax will be paid by: ${gstTax}`, 10, 130);
+
+            const lorryReceiptPdf = doc.output('blob');
+            const url = window.URL || window.webkitURL;
+            const link = url.createObjectURL(lorryReceiptPdf);
+            const a = document.createElement('a');
+            a.href = link;
+            a.download = 'lorry-receipt.pdf';
+            a.click();
         });
     </script>
 </body>
