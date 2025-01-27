@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Bilty Generator</h1>
-    <form id="biltyForm">
+    <form id="biltyForm" action="/generate-bilty" method="post">
         <h2>Transport Operator Details</h2>
         <label for="operatorName">Operator Name:</label>
         <input type="text" id="operatorName" name="operatorName" value="ABHI ROAD CARRIER"><br>
@@ -120,8 +120,12 @@
     <script>
         document.getElementById('biltyForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Logic to generate bilty document goes here
-            alert('Bilty Generated Successfully!');
+            const formData = new FormData(this);
+            fetch('/generate-bilty', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+            .then(data => alert(data));
         });
     </script>
 </body>
